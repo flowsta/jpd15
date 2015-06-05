@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+  <title>Accesibilidad en la Visualización de la información de datos-</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords"
+  content="visualización, open data, data, Accesibilidad, adaptabilidad, usabilidad, SIDAR, SID@R, Web, Internet, W3C, Sociedad de la Información"
+  />
+  <meta name="Description"
+  content="Presentación para las III Jornadas Periodismo de Datos, celebradas en Madrid del 2 al 7 de junio de 2015. La presentación se hace en Media Lab Prado."
+  />
+  <meta name="Author" content="Emmanuelle Gutiérrez y Restrepo" />
+  <meta name="copyright" content="Copyright © 1997-2015 Fundación Sidar" />
+  <meta name="font-size-adjustment" content="-1" />
+  <meta name="duration" content="20" />
+  <link rel="stylesheet" href="../sidar-nar.css" type="text/css"
+  media="screen, projection, print" />
+  <link rel="shortcut icon" href="http://sidar.org/graf/favicon.ico" type="image/x-icon" />
+  <script type="text/javascript" src="../slidy.js"></script>
+    <script type="text/javascript" src="../slidy-toc.js">
+  </script>
+  
+  <!-- Estilos y scripts para personas y marcado matemático-->
+  
+
+ <link type="text/css" href="sidar.css" rel="stylesheet" />
+ <link type="text/css" href="jquery-ui-1.8.13.custom.css" rel="stylesheet" /> 
+  <script type="text/javascript" src="http://www.sidar.org/jquery/js/jquery-1.5.1.min.js"></script>
+  <script type="text/javascript" src="http://www.sidar.org/jquery/js/jquery-ui-1.8.13.custom.min.js"></script>
+  <script type='text/javascript' src='http://www.sidar.org/jwplayer/jwplayer.js'></script>
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+  <script type="text/javascript">
+   $(function(){
+
+    // Accordion
+    $("#accordion").accordion({ header: "h3" });
+ 
+    // Tabs
+    $('#tabs').tabs();
+ 
+
+    // Dialog   
+    $('#dialog').dialog({
+     autoOpen: false,
+     width: 600,
+     buttons: {
+      "Ok": function() { 
+       $(this).dialog("close"); 
+      }, 
+      "Cancel": function() { 
+       $(this).dialog("close"); 
+      } 
+     }
+    });
+    
+    // Dialog Link
+    $('#dialog_link').click(function(){
+     $('#dialog').dialog('open');
+     return false;
+    });
+
+    // Datepicker
+    $('#datepicker').datepicker({
+     inline: true
+    });
+    
+    // Slider
+    $('#slider').slider({
+     range: true,
+     values: [17, 67]
+    });
+    
+    // Progressbar
+    $("#progressbar").progressbar({
+     value: 20 
+    });
+    
+    //hover states on the static widgets
+    $('#dialog_link, ul#icons li').hover(
+     function() { $(this).addClass('ui-state-hover'); }, 
+     function() { $(this).removeClass('ui-state-hover'); }
+    );
+    
+   });
+</script>
+
+<!--  Fuente de google para simular el logo del congreso -->
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div class="background">
+
+<div class="footer">
+<!-- Cambiar el nombre de la presentacion y del evento, etc. -->
+<span>JPD15</span> </div>
+</div>
+<!-- Esto es para cuando se quiera poner en alguna el logo sidar centrado en el fondo
+	para ello basta con declarar la clase como: slide slanty -->
+
+<div class="background slanty">
+<img src="../img/logo-solo-volumen-reflejo-mini.png" alt="Logo del SIDAR"
+width="100" height="116" /> </div>
+
+<div class="slide cover titlepage">
+<!-- hidden style graphics to ensure they are saved with other content ELIMINADOS
+<img class="hidden" src="../Slidy/bullet.png" alt="" /> <img class="hidden"
+src="../Slidy/fold.gif" alt="" /> <img class="hidden"
+src="../Slidy/unfold.gif" alt="" /> <img class="hidden"
+src="../Slidy/fold-dim.gif" alt="" /> <img class="hidden"
+src="../Slidy/nofold-dim.gif" alt="" /> <img class="hidden"
+src="../Slidy/unfold-dim.gif" alt="" /> <img class="hidden"
+src="../Slidy/bullet-fold.gif" alt="" /> <img class="hidden"
+src="../Slidy/bullet-unfold.gif" alt="" /> <img class="hidden"
+src="../Slidy/bullet-fold-dim.gif" alt="" /> <img class="hidden"
+src="../Slidy/bullet-nofold-dim.gif" alt="" /> <img class="hidden"
+src="../Slidy/bullet-unfold-dim.gif" alt="" /> -->
+<img src="../img/logo-solo-volumen-reflejo.png" alt="Logotipo del SIDAR"
+width="240" height="347" /> <!-- Indicar el nombre de la presentacion --> 
+
+<h1>Accesibilidad de la visualización de datos</h1>
+
+<p><a href="http://www.sidar.org/que/ge/lmn.php">Emmanuelle Gutiérrez y
+Restrepo,</a> &lt;<a
+href="mailto:loic@sidar.org">emmanuelle@sidar.org</a>&gt;</p>
+<img src="graf/jpd15.png" alt="Terceras jornadas de periodismo de datos." style="float:left; margin-bottom:2.5em; margin-left: 12%;" />
+</div>
+
+<div class="slide cover titlepage">
+<img src="../img/logo-solo-volumen-reflejo.png" alt="Logotipo del SIDAR"
+width="240" height="347" /> <!-- Indicar el nombre de la presentacion --> 
+
+<h1>Accesibilidad de la visualización de datos</h1>
+
+<p><a href="http://www.sidar.org/que/ge/lmn.php">Emmanuelle Gutiérrez y
+Restrepo,</a> &lt;<a
+href="mailto:loic@sidar.org">emmanuelle@sidar.org</a>&gt;</p>
+<div class="logocongres" style="margin-top:-1em; margin-left: 13%;"><img src="graf/jp.png" alt="Terceras jornadas de periodismo de datos." style="float: left; padding-top: 0.5em;" /><p style="float: left; font-weight:bold;"><span class="red">III Jornadas</span> Periodismo <span class="red">de Datos</span> del 2 al 7 de junio de 2015<br /><span class="logo-jdp">los datos al desnudo</span> Madrid, Barcelona, Almería, Pamplona/Iruña</p></div><div class="lemacongres">Datos abiertos, Seguridad, PGP, Install fest, transparencia, privacidad, intimidad, filtraciones, visualización, hackatón, jpd2015</div>
+
+</div>
+
+<div class="slide">
+<h1>Presentación: Emmanuelle Gutiérrez y Restrepo</h1>
+<a href="http://www.sidar.org/que/ge/egyr.php"
+title="Breve currículo de Emmanuelle Gutiérrez y Restrepo."><img
+src="graf/emmanuelle.jpg"
+alt="Foto de Emmanuelle Gutiérrez y Restrepo, enlaza con su currículo."
+style="float:right; border: none; width:23%; margin-left:1em;" class="scaled" /></a> 
+<ul>
+  <li>Investigadora Experta en Accesibilidad del <abbr
+    title="Departamento">Depto.</abbr> de Inteligencia Artificial de la
+    <acronym
+    title="Escuela Técnica Superior de Ingeniería Informática">ETSII</acronym>
+    de la <acronym
+    title="Universidad Nacional de Educación a Distancia">UNED</acronym></li>
+  <li>Miembro del Grupo de Trabajo para la Redacción de las <acronym title="Web content accessibility guidelines">WCAG</acronym> 1.0 y 2.0</li>
+  <li>Experta Invitada en el Grupo de Trabajo Educación y Difusión (EOWG) y del de Herramientas de Revisión y Reparación (ERT WG) del W3C-WAI; y del nuevo Grupo de Trabajo sobre accesibilidad para discapacidades cognitivas y de aprendizaje, del Grupo sobre Protocolos y Formatos (PFWG)</li>
+  <li>Coordinadora del grupo de normalización español <acronym
+    title="AENOR">AEN</acronym> <acronym
+    title="Comité Técnico Naciona">CTN</acronym>139/ <acronym
+    title="Subcomité">SC</acronym>8 - GT3</li>
+  <li>Patrono y Directora General de la <a href="http://www.sidar.org"
+    title="Página principal de la Fundación Sidar">Fundación Sidar - Acceso
+    Universal</a></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Visualización de datos</h1>
+<div class="text">
+<h2>Múltiples opciones</h2>
+<img src="graf/opciones.png" alt="opciones de representación visual de datos" width="75%" />
+</div>
+<div class="text2">
+<h2>Múltiples herramientas</h2>
+<img src="graf/herramientas.png" alt="herramientas para la representación visual de datos" width="75%" />
+</div>
+ </div>
+
+<div class="slide">
+<h1>¿Accesible para TODOS?</h1>
+<div class="text">
+<h2>Acceso a</h2>
+<ul>
+<li>Contar con ordenador, tableta o teléfono móvil inteligente</li>
+<li>Contar con conexión a Internet</li>
+<li>Contar con navegador</li>
+<li>Contar con...</li>
+</ul>
+</div>
+<div class="text2">
+<h2>Accesibilidad de los contenidos</h2>
+<dl>
+<ul class="outline"><li>Perceptible
+<ul><li style="list-style-type:none;">El contenido debe poder ser <span class="destaca">percibido</span> mediante <span class="destaca">distintos sentidos</span>.</li></ul></li>
+<li>Operable
+<ul><li style="list-style-type:none;">Los elementos de interacción deben ser <span class="destaca">manejables por diversos dispositivos de entrada</span>.</li></ul></li>
+<li>Comprensible
+<ul><li style="list-style-type:none;">El <span class="destaca">contenido y los controles</span> deben resultar <span class="destaca">compresibles</span>.</li></ul></li>
+<li>Robusto
+<ul><li style="list-style-type:none;">El contenido debe ser suficientemente robusto para <span  class="destaca">funcionar con las tecnologías actuales y futuras</span> (<span class="resalta">incluyendo las ayudas técnicas o tecnologías de apoyo</span>).</li></ul></li></ul>
+</dl>
+</div>
+
+</div>
+
+<div class="slide">
+<h1>¿Qué es la accesibilidad?</h1>
+<div class="text">
+<ul class="outline">
+  <li>Accesibilidad Según Bernes-Lee
+    <ul><li style="list-style-type:none;">Es <strong class="destaca">el arte</strong> de garantizar que, tan amplia y extensamente como sea
+      posible, los medios (como por ejemplo el acceso a la Web) estén
+      disponibles para las personas, tengan o no deficiencias de un tipo u
+      otro (<cite title="Glosario de Tim Bernes Lee."><a
+      href="http://www.w3.org/People/Berners-Lee/Weaving/glossary.html"
+      title="Glosario de Tim Bernes Lee." rel="glossary"
+      hreflang="en">Sir Tim Bernes-Lee</a></cite>).</li></ul>
+	  </li>
+	  <li>Accesibilidad según ISO
+	  <ul><li style="list-style-type:none;">Accesibilidad es la <strong>facilidad de uso</strong> de forma <strong>eficiente, eficaz y satisfactoria</strong> de un producto, servicio, entorno o instrumento por personas que poseen diferentes capacidades. (ISO/TC 16027)</li>
+	  <li style="list-style-type:none;">Accesibilidad es la <strong>usabilidad</strong> de un producto, servicio, entorno o instalación para <strong>personas con el más amplio rango de capacidades</strong>. (ISO CD 9241-171 "Ergonomics of human-system interaction —Guidance on software accessibility")</li></ul>
+	  </li>
+</dl>
+</div>
+
+<div class="image">
+<img src="graf/proporcion-disca.png" alt="una de cada 7 personas tiene una discapacidad" class="scaled" />
+
+<div style="padding-top:2em;" class="center"><p><span style="font-size:4em; font-weight:700; line-height:2em;">1.000 Millones</span><span style="font-size:5em; font-weight:700; color:#BB0034; background-color:inherit; text-decoration:blink;">♿</span></p></div>
+</div>
+</div>
+
+<div class="slide">
+<h1>Las personas: diversidad</h1>
+<ul class="incremental">
+  <li style="display:inline;"><img src="graf/movilidad.jpg" alt="Movilidad"
+    style="width:8em;vertical-align:middle;" /></li>
+  <li style="display:inline;"><img src="graf/vista.jpg" alt="Vista"
+    style="width:8em;vertical-align:middle;" /></li>
+  <li style="display:inline;"><img src="graf/oido.jpg" alt="Oído"
+    style="width:8em;vertical-align:middle;" /></li>
+  <li style="display:inline;"><img src="graf/cognitivo.jpg"
+    alt="Capacidades cognitivas y del lenguaje"
+    style="width:8em;vertical-align:middle;" /></li>
+  <li style="display:inline;"><img src="graf/destreza.jpg"
+    alt="Destreza manual" style="width:8em;vertical-align:middle;" /></li>
+  <li style="display:inline;"><img src="graf/vejez.jpg" alt="Envejecimiento"
+    style="width:8em;vertical-align:middle;" /></li>
+</ul>
+
+<div id="tabs" style="width:80%; margin-left:4em;">
+					<ul>
+				<li><a href="#tabs-2">Ana</a></li>
+				<li><a href="#tabs-3">Hans</a></li>
+				<li><a href="#tabs-4">Camilo</a></li>
+				<li><a href="#tabs-5">Martina</a></li>
+				<li><a href="#tabs-6">Roberto</a></li>
+				<li><a href="#tabs-7">Clara</a></li>
+				<li><a href="#tabs-8">Est&#xed;baliz</a></li>
+				<li><a href="#tabs-9">Pablo</a></li>
+				<li><a href="#tabs-1">Robot</a></li>
+			</ul>
+			
+			<div id="tabs-2"><img src="Iconos/ana.jpg" width="130" height="130" alt="Ana" class="imgizda" />
+<p>Ana tiene 68 a&#xf1;os, vive en un pueblo de la sierra de Madrid (Espa&#xf1;a) y gracias a que en su pueblo hay conexi&#xf3;n wi-fi gratis para todos, utiliza un port&#xe1;til para comunicarse con sus nietos, que estudian fuera, y para encontrar recetas de cocina, instrucciones de ganchillo y para hacer alg&#xfa;n curso precisamente sobre el manejo del ordenador.</p>
+<p>No le gusta que la llamen &quot;<span class="destaca">Analfabeta digital</span>&quot;, por eso se esfuerza en hacer cursos y estar al d&#xed;a en todo, as&#xed; que ahora tiene su p&#xe1;gina en Facebook y comparte con sus amigas informaci&#xf3;n sobre los avances de Internet.</p>
+<p>Últimamente le han diagnosticado temblor esencial.</p>
+</div>
+			<div id="tabs-3"><img src="Iconos/hans.jpg" width="130" height="130" alt="Hans" class="imgizda" />
+<p>Hans es profesor universitario en Berl&#xed;n, su ciudad natal. Navega por Iternet utilizando su smartphone o su iPad, fundamentalmente para localizar informaci&#xf3;n sobre literatura espa&#xf1;ola del <abbr title="Siglo">S.</abbr> XVIII.</p>
+<p>Entiende el espa&#xf1;ol, <span class="destaca">pero no lo domina del todo</span>, por lo que prefiere utilizar las p&#xe1;ginas en alem&#xe1;n o ingl&#xe9;s.</p>
+<p>A pesar de su amor por la literatura cl&#xe1;sica, es un <span class="destaca">forofo de las nuevas tecnolog&#xed;as</span> y siempre est&#xe1; probando cuanto aparatito y software nuevo sale.</p>
+</div>
+<div id="tabs-4"><img src="Iconos/camilo.jpg" width="130" height="130" alt="Camilo" class="imgizda" />
+<p>Camilo vive en Aguas Calientes, cerca de Cusco en Per&#xfa;. Tiene 19 a&#xf1;os y est&#xe1; terminando el bachillerato. Tiene un viejo ordenador 386 y una impresora de tinta negra. Como la banda ancha a&#xfa;n no llega a su pueblo, tiene que utilizar una <span class="destaca">conexi&#xf3;n telef&#xf3;nica de 56 <abbr title="Kilobytes">KB</abbr></span>. Por tanto, navega sin descargarse las im&#xe1;genes para que le cuesten menos las conexiones.</p>
+<p>Su lengua materna es el Quechua y aunque habla espa&#xf1;ol con naturalidad, tiene <span class="destaca">dificultades de lecto-escritura</span>. Cuando era peque&#xf1;ito le descubrieron <span class="destaca">epilepsia fotosensitiva</span>.</p>
+<p>Aunque su ordenador, su conexi&#xf3;n y su impresora sean viejos, les saca el mayor partido posible y consigue aprovechar al m&#xe1;ximo sus interacciones en Internet, tanto para las tareas del curso como para hacer amigos por todo el mundo.</p>
+</div>
+<div id="tabs-5"><img src="Iconos/martina.jpg" width="130" height="130" alt="Martina" class="imgizda" />
+<p>Martina es bonaerense, inform&#xe1;tica y trabaja en un banco multinacional. Es <span class="destaca">ciega desde los 12 a&#xf1;os</span>, por lo que a&#xfa;n recuerda conceptos relacionados con la imagen, como los colores y las expresiones art&#xed;sticas, que siempre le encantaron.</p>
+<p>Utiliza JAWS como lector de pantalla principal, pero cada vez utiliza m&#xe1;s NVDA, ya que puede usarlo en cualquier ordenador desde su propio <span xml:lang="en" lang="en">pen-drive</span> o memoria USB.</p>
+<p>Sus conocimientos inform&#xe1;ticos y su experiencia como usuaria ciega, los pone al servicio de otras personas ciegas a trav&#xe9;s de su propia p&#xe1;gina web.</p>
+</div>
+<div id="tabs-6"><img src="Iconos/roberto.jpg" width="130" height="130" alt="Roberto" class="imgizda" />
+<p>Roberto es venezolano de or&#xed;gen chino. Como cerca del 10% de la poblaci&#xf3;n masculina del mundo, es <span class="destaca">dalt&#xf3;nico</span>. Adem&#xe1;s, est&#xe1; perdiendo vista debido a una <span class="destaca">retinosis pigmentaria</span>, por lo que necesita acercarse mucho a la pantalla y ampliar mucho los contenidos para poder apreciarlos. Es empresario y necesita conectarse a Internet para hacer pedidos a los distribuidores de objetos de papeler&#xed;a que vende.</p>
+<p>Pero tambi&#xe9;n, confiesa, usa el ordenador para participar en partidas globales de videojuegos.</p>
+</div>
+<div id="tabs-7"><img src="Iconos/clara.jpg" width="130" height="130" alt="Clara" class="imgizda" />
+<p>Clara es salvadore&#xf1;a, tiene 22 a&#xf1;os, estudia Ingenier&#xed;a Industrial en la Universidad Centroamericana Jos&#xe9; Sime&#xf3;n Ca&#xf1;as. Le gusta ir a la playa los fines de semana e ir de compras con sus amigas. Le tiene pavor a los terremotos y eso es un handicap en un pa&#xed;s en el que hay muchos temblores al a&#xf1;o. En cambio, para ella no ha sido un handicap su <span class="destaca">par&#xe1;lisis cerebral</span> y a pesar de ella, y de tener bastantes dificultades motoras en sus brazos, utiliza el ordeandor con bastante soltura con su Licornio. Gracias a ello no ha tenido retraso en sus estudios y es una de las mejores alumnas de su clase.</p></div>
+<div id="tabs-8"><img src="Iconos/estibaliz.jpg" width="130" height="130" alt="Est&#xed;baliz" class="imgizda" />
+<p>Est&#xed;baliz vive en San Sebasti&#xe1;n (Donostia - San Sebasti&#xe1;n), en el norte de Espa&#xf1;a. Colabora con una organizaci&#xf3;n no gubernamental (ONG) que presta apoyo a los saharianos refugiados en Argelia. Trabaja en una asociaci&#xf3;n de sordos del Pa&#xed;s Vasco, y ella misma es <span class="destaca">sorda</span>. Aunque est&#xe1; alfabetizada y puede leer contenidos en espa&#xf1;ol, su lengua materna es la lengua de se&#xf1;as espa&#xf1;ola (LSE), por lo que le resulta m&#xe1;s f&#xe1;cil comprender los contenidos en esa lengua. Adem&#xe1;s ella es profesora de <acronym title="Lengua de signos espa&#xf1;ola">LSE</acronym> de manera que reivindica la importancia de que en la web se ofrezca esa alternativa.</p></div>
+<div id="tabs-9"><img src="Iconos/pablo.jpg" width="130" height="130" alt="Pablo" class="imgizda" />
+<p>Pablo es un excelente atleta y sigue sus estudios universitarios de Empresariales en una universidad a distancia. Aprovecha esta modalidad no s&#xf3;lo porque las competiciones le quitan tiempo para estudiar normalmente, sino porque adem&#xe1;s tiene ciertas <span class="destaca">deficiencias cognitivas</span> que le hacen dif&#xed;cil seguir los estudios al mismo ritmo que otros chicos de su edad. Pablo tiene <span class="destaca">d&#xe9;ficit de atenci&#xf3;n</span> y tambi&#xe9;n <span class="destaca">dificultades de lecto-escritura</span>.</p>
+<p>As&#xed; que, Pablo va un poco retrasado en los estudios pero tiene la suficiente voluntad para continuar a pesar de sus limitaciones para el aprendizaje.</p>
+</div>
+		<div id="tabs-1"><img src="Iconos/google.png" width="130" height="130" alt="Google" class="imgizda" />
+<p>Google es el usuario m&#xe1;s apreciado por todos los dise&#xf1;adores y desarrolladores Web. Todos queremos que Google indexe bien nuestras p&#xe1;ginas. Pero, dado que Google es un robot, es <span class="destaca">ciego</span>. Al igual que las personas ciegas, s&#xf3;lo puede percibir lo que hay en el c&#xf3;digo fuente. Los robots de b&#xfa;squeda &quot;l&#xe9;en&quot; el c&#xf3;digo fuente de la p&#xe1;gina, por tanto no pueden saber qu&#xe9; representa una imagen a menos que se lo digamos mediante el atributo <em>alt</em>.</p>
+<p>Por otra parte, para que Google pueda hacer una buena indexaci&#xf3;n de nuestros contenidos, es fundamental que est&#xe9;n bien estructurados y que utilicemos el marcado sem&#xe1;ntico.</p>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<h1>Pautas de Accesibilidad para el Contenido de la Web 
+(<acronym title="Web Content Accessibility Guidelines" xml:lang="en" lang="en">WCAG</acronym>)</h1>
+
+<img src="graf/wcag.png"
+alt="El gráfico representa el contenidos de las WCAG 2.0 y su relación con otras especificaciones."
+style="float: right; border: none; padding-left: 1em; width:49%;" /> 
+
+<p>Los documentos denominados 
+Pautas de Accesibilidad para el Contenido de la Web 
+(<acronym title="Web Content Accessibility Guidelines" xml:lang="en" lang="en">WCAG</acronym>) 
+explican cómo hacer que el contenido Web sea accesible para todas las personas, incluyendo a las personas con discapacidad.</p>
+
+<p>Las <acronym title="Web Content Accessibility Guidelines" xml:lang="en" lang="en">WCAG</acronym> 1.0 fueron
+publicadas en mayo de 1999 y representan el primer y más grande esfuerzo por establecer unas pautas de diseño accesible.</p>
+<p>En diciembre de 2008, se publicó la Recomendación 
+<acronym title="Web Content Accessibility Guidelines" xml:lang="en" lang="en">WCAG</acronym> 2.0 y es una versión estable y 
+de referencia para todo el mundo.</p>
+
+<p>En España la norma de referencia es la <strong>Norma UNE 139803:2012</strong>, que apunta a las <acronym title="Web Content Accessibility Guidelines" xml:lang="en" lang="en">WCAG</acronym> 2.0</p>
+</div>
+
+<div class="slide">
+<h1>Beneficios del diseño accesible</h1>
+
+<div class="text2">
+<h2>Económicos</h2>
+<ul>
+  <li>Incremento del número de usuarios que visitan las páginas de una
+    institución o empresa.</li>
+  <li>Imagen de responsabilidad social que redunda en aumento del número de
+    clientes o usuarios.</li>
+  <li>Además, menores costes de mantenimiento y carga en el servidor.</li>
+  <li>Seguridad ante posibles sanciones.</li>
+</ul>
+
+<h2>Legales</h2>
+<ul>
+  <li>Cumplimiento de la <em>legislación vigente</em> nacional</li>
+  <li>Cumplimiento de la legislación internacional</li>
+</ul>
+</div>
+<div class="text">
+<h2>Técnicos</h2>
+<ul>
+<li>Incremento de la usabilidad</li>
+<li>Mejora en la indización y posicionamiento (SEO)</li>
+<li>Interoperabilidad: dispositivos, navegadores, aplicaciones enriquecidas.</li>
+</ul>
+<h2>Sociales</h2>
+<ul style="padding-bottom:1.5em;">
+  <li>Facilitar la inclusión social de las personas marginadas o en riesgo
+    de serlo.</li>
+  <li>Construcción de una sociedad menos segregadora y más integradora.</li>
+  <li>Reducción de la brecha digital.</li>
+  <li>Genera herramientas para el desarrollo social.</li>
+</ul>
+</div>
+</div>
+
+<div class="slide title">
+<h1 style="font-family: 'Arvo', arial, sans-serif;
+   background-color: transparent;
+   border:0;
+    font-weight:700;
+    color:#e4f3f9;
+    font-size:5em;
+    text-align:center;
+    /* Left - Top - Grossir*/
+    text-shadow:
+    -2px -2px 1px #fff,
+    -1px -1px 1px #fff,
+    1px 1px 1px rgba(232,247,255,0.9),
+    1px 1px 0 #2a658b,
+    2px 2px 0 #29638a,
+    3px 3px 0 #286188,
+    4px 4px 0 #275f85,
+    5px 5px 0 #265d83,
+    6px 6px 0 #255a80,
+    7px 7px 0 #24577d,
+    8px 8px 0 #235479,
+    9px 9px 0 #215075,
+    10px 10px 0 #1f4c71,
+    11px 11px 0 #1e486c,
+    12px 12px 1px rgba(28,67,103,0.5),
+    14px 14px 12px rgba(5,13,20,0.5)
+    ;">Algunas consideraciones de accesibilidad en la visualización de datos</h1>
+
+</div>
+
+<div class="slide">
+<h1>Visibilidad del color</h1>
+<p class="subhead">El 10% de la población <strong>masculina</strong> tiene algún tipo de daltonismo.</p>
+<p>Criterios relacionados</p>
+<ul class="outline">
+<li>1.4.1 El color no se usa como <strong>único medio</strong> visual para transmitir la información, indicar una acción, solicitar una respuesta o distinguir un elemento visual.
+</li>
+
+<li>1.4.3 La presentación visual de texto e imágenes de texto tiene una relación de contraste de, <strong>al menos, 4.5:1</strong>, excepto en los siguientes casos:
+<ul>
+<li style="float:right; list-style-type: none; width:33%""><img src="graf/colores.png" title="tabla de colores que tienen un ratio de contraste de al menos 4.5:1 tanto sobre blanco como sobre negro" class="scaled" width="50%" style="margin-top:-1.5em;" /><p class="smaller">Fuente: <a href="http://trace.wisc.edu/contrast-ratio-examples/PassingMidColorSamples_4-5to1.htm" xml:lang="en" lang="en" hreflang="en">Trace</a></p></li>
+<li>
+<p><strong class="sc-handle">Textos grandes:</strong> Los textos de <a title="definición: gran tamaño (texto)" href="http://sidar.org/traducciones/wcag20/es/#larger-scaledef" class="termref">gran tamaño</a> y las imágenes de texto de gran tamaño tienen una relación de contraste de, al menos, 3:1.</p>
+</li>
+<li>
+<p><strong class="sc-handle">Incidental:</strong> Los textos o imágenes de texto que forman parte de un <a title="definición: componente de la interfaz de usuario" href="http://sidar.org/traducciones/wcag20/es/#user-interface-componentdef" class="termref">componente inactivo de la interfaz de usuario</a>, que son <a title="definición: simple decoración" href="http://sidar.org/traducciones/wcag20/es/#puredecdef" class="termref">simple decoración</a>, que no resultan visibles para nadie o forman parte de una imagen que contiene otros elementos visuales significativos, no tienen requisitos de contraste.</p>
+</li>
+<li>
+<p><strong class="sc-handle">Logotipos:</strong> El texto que forma parte de un logo o nombre de marca no tiene requisitos de contraste mínimo.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Deficiencias de percepeción del color</h1>
+<div class="text">
+<div class="incremental" 
+ style="margin-left: 4em; position: relative"> 
+  <img src="graf/grafbarras.png" alt="Vista de un gráfico de barras" width="80%" 
+   style="position: static; vertical-align: bottom"/> 
+  <img src="graf/protanopia.png" alt="el gráfico de barras visto por una persona con protanopia" width="80%"
+    style="position: absolute; left: 0; top: 0" /> 
+  <img src="graf/deuteranopia.png" alt="el gráfico visto por una persona con deuteranopia" width="80%"
+    style="position: absolute; left: 0; top: 0" /> 
+  <img src="graf/tritanopia.png" alt="el gráfico visto por una persona con tritanopia" width="80%"
+    style="position: absolute; left: 0; top: 0" /> 
+</div>
+</div>
+<div class="text2">
+<img src="graf/colorcontrast.png" alt="vista de revisión con la herramienta color contrast analyzer" class="scaled" />
+<p class="smaller"><a href="http://www.visionaustralia.org/digital-access-cca" hreflang="en">Descargar la herramienta Colour Contrast Analyser</a></p>
+</div>
+
+</div>
+
+<div class="slide">
+<h1>Acceso mediante teclado</h1>
+<p class="subhead">Las personas ciegas y las personas con dificultades motóricas en los miembros superiores no pueden usar el ratón</p>
+
+<ul class="incremental">
+  <li style="display:inline;"><img src="Iconos/martina.jpg" alt="persona ciega"
+    style="width:8em;vertical-align:middle;" /></li>
+  <li style="display:inline;"><img src="Iconos/clara.jpg" alt="persona con parálisis cerebral"
+    style="width:8em;vertical-align:middle;" /></li>
+  <li style="display:inline;"><img src="Iconos/ana.jpg" alt="persona con temblor esencial"
+    style="width:8em;vertical-align:middle;" /></li>
+</ul>
+
+<div>
+<ul class="outline">
+<li><strong><em>2.1.1</em></strong> Toda la <a title="definición: funcionalidad" href="http://sidar.org/traducciones/wcag20/es/#functiondef" class="termref">funcionalidad</a> del contenido es operable a través de una <a title="definición: interfaz de teclado" href="http://sidar.org/traducciones/wcag20/es/#keybrd-interfacedef" class="termref">interfaz de teclado</a> sin que se requiera una determinada velocidad para cada pulsación individual de las teclas, excepto cuando la función interna requiere de una entrada que depende del trayecto de los movimientos del usuario y no sólo de los puntos inicial y final.
+<ul>
+<li><em>Nota 1:</em> Esta excepción se refiere a la función subyacente, no a la técnica de entrada de datos. Por ejemplo, si la entrada de texto se hace por medio de escritura a mano, la técnica de entrada (escritura a mano) depende del trazo (ruta trazada) pero la función interna (introducir texto) no.</li>
+<li><em>Nota 2:</em> Esto no prohíbe ni debería desanimar a los autores a proporcionar entrada de ratón u otros métodos de entrada de datos adicionales a la operabilidad a través del teclado.</li>
+</ul>
+
+</li>
+<li><strong><em>2.1.2</em></strong> Si es posible mover el foco a un componente de la página usando una <a title="definición: interfaz de teclado" href="http://sidar.org/traducciones/wcag20/es/#keybrd-interfacedef" class="termref">interfaz de teclado</a>, entonces el foco se puede quitar de ese componente usando sólo la interfaz de teclado y, si se requiere algo más que las teclas de dirección o de tabulación, se informa al usuario el método apropiado para mover el foco.
+<ul>
+<li><em>Nota:</em> En la medida en que cualquier contenido que no satisfaga este criterio puede interferir con la capacidad del usuario para emplear la página por completo, todo contenido de la página web (tanto si satisface o no otros criterios de conformidad) debe satisfacer este criterio. Véase <a href="http://sidar.org/traducciones/wcag20/es/#cc5">Requisito de Conformidad 5: Sin interferencia</a>.</li>
+</ul>
+</li>
+</div>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>Ejemplo manejable mediante teclado y ratón</h1>
+<div style="width:70%"><img src="graf/accesteclado.png" alt="captura de pantalla del sitio whatsock" class="scaled" /></div>
+<p class="smaller">fuente: <a href="http://whatsock.com/" xml:lang="en" lang="en" hreflang="en">Whatsock</a></p>
+</div>
+
+<div class="slide">
+<h1>Magnificación</h1>
+<p class="subhead">Los usuarios con baja visión o con pantallas muy pequeñas pueden necesitar ampliar los contenidos.</p>
+<ul class="outline">
+<li><strong><em>1.4.8</em></strong> En la presentación visual de <a title="definición: bloques de texto" href="http://sidar.org/traducciones/wcag20/es/#blockstextdef" class="termref">bloques de texto</a>, se proporciona algún <a title="definición: mecanismo" href="http://sidar.org/traducciones/wcag20/es/#mechanismdef" class="termref">mecanismo</a> para lograr lo siguiente: 
+<ol class="enumar">
+<li>
+<p>Los colores de fondo y primer plano pueden ser elegidos por el usuario.</p>
+</li>
+<li>
+<p>El ancho no es mayor de 80 caracteres o signos (40 si es <acronym title="chino, japonés o coreano">CJK</acronym>).</p>
+</li>
+<li>
+<p>El texto no está justificado (alineado a los márgenes izquierdo y derecho a la vez).</p>
+</li>
+<li>
+<p>El espacio entre líneas (interlineado) es de, al menos, un espacio y medio dentro de los párrafos y el espacio entre párrafos es, al menos, 1.5 veces mayor que el espacio entre líneas.</p>
+</li>
+<li>
+<p>El <strong>texto se ajusta sin ayudas técnicas hasta un 200 por ciento</strong> de modo tal que no requiere un desplazamiento horizontal para leer una línea de texto <a title="definición: en una ventana a pantalla completo" href="http://sidar.org/traducciones/wcag20/es/#fullscreenwindowdef" class="termref">en una ventana a pantalla completa</a>.</p>
+</li>
+</ol>
+</li>
+</ul>
+<div class="image"><img src="graf/responsive.jpeg" alt="captura de pantalla de una web vista en varios dispositivos" class="escala" />
+<p>Ejemplo de "<span xml:lang="en" lang="en">Responsive web design</span>"</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Equivalentes alternativos accesibles</h1>
+<p class="subhead">La accesibilidad no pide milagros, tan sólo ofrecer alternativas de acceso a la información y los contenidos.</p>
+<ul class="outline">
+<li><strong></strong><em>1.1.1</em></strong> Todo <a title="definición: contenido no textual" href="http://sidar.org/traducciones/wcag20/es/#non-text-contentdef" class="termref">contenido no textual</a> que se presenta al usuario tiene una <a title="definición: alternativa textual" href="http://sidar.org/traducciones/wcag20/es/#text-altdef" class="termref">alternativa textual</a> que cumple el mismo propósito, excepto en las situaciones enumeradas a continuación: 
+<ul>
+<li>
+<p><strong class="sc-handle">Controles, Entrada de datos:</strong> Si el contenido no textual es un control o acepta datos introducidos por el usuario, entonces tiene un <a title="definición: nombre" href="http://sidar.org/traducciones/wcag20/es/#namedef" class="termref">nombre</a> que describe su propósito. (Véase la <a href="http://sidar.org/traducciones/wcag20/es/#ensure-compat">Pauta 4.1</a> para requisitos adicionales sobre los controles y el contenido que aceptan entrada de datos).</p>
+</li>
+<li>
+<p><strong class="sc-handle">Contenido multimedia tempodependiente:</strong> Si el contenido no textual es una presentación multimedia con desarrollo temporal, entonces las alternativas textuales proporcionan al menos una identificación descriptiva del contenido no textual. (Véase la <a href="http://sidar.org/traducciones/wcag20/es/#media-equiv">Pauta 1.2</a> para requisitos adicionales sobre contenido multimedia).</p>
+</li>
+<li>
+<p><strong class="sc-handle">Pruebas:</strong> Si el contenido no textual es una prueba o un ejercicio que no sería válido si se presentara en forma de <a title="definición: texto" href="http://sidar.org/traducciones/wcag20/es/#textdef" class="termref">texto</a>, entonces las alternativas textuales proporcionan al menos una identificación descriptiva del contenido no textual.</p>
+</li>
+<li>
+<p><strong class="sc-handle">Sensorial:</strong> Si el contenido no textual tiene como objetivo principal el crear una <a title="definición: experiencia sensorial específica" href="http://sidar.org/traducciones/wcag20/es/#sensoryexpdef" class="termref">experiencia sensorial específica</a>, entonces las alternativas textuales proporcionan al menos una identificación descriptiva del contenido no textual.</p>
+</li>
+<li>
+<p><strong class="sc-handle"><a title="definición: CAPTCHA" href="http://sidar.org/traducciones/wcag20/es/#CAPTCHAdef" class="termref">CAPTCHA</a>:</strong> Si el propósito del contenido no textual es confirmar que quien está accediendo al contenido es una persona y no una computadora, entonces se proporcionan alternativas textuales que identifican y describen el propósito del contenido no textual y se proporcionan formas alternativas de CAPTCHA con modos de salida para distintos tipos de percepciones sensoriales, con el fin de acomodarse a las diferentes discapacidades.</p>
+</li>
+<li>
+<p><strong class="sc-handle">Decoración, Formato, Invisible:</strong> Si el contenido no textual es <a title="definición: simple decoración" href="http://sidar.org/traducciones/wcag20/es/#puredecdef" class="termref">simple decoración</a>, se utiliza únicamente para definir el formato visual o no se presenta a los usuarios, entonces se implementa de forma que pueda ser ignorado por las <a title="definición: ayudas técnicas" href="http://sidar.org/traducciones/wcag20/es/#atdef" class="termref">ayudas técnicas</a>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="image"><img src="graf/datajournalism.png" alt="captura de una página del diario texas" class="scaled" />
+<p class="smaller">ejemplo tomado del <a href="http://datajournalismhandbook.org/1.0/en/introduction_3.html" xml:lang="en" lang="en" hreflang="en">Data Journalism Handbook</a></p>
+</div>
+<p style="float:right">¡Atención a las normas de estilo! Sugerencia: Consultar la <a href="https://www.goodreads.com/book/show/1588269.Desktop_Style_Guide">Guía de Estilo para la autoedición</a>.</p>
+</div>
+
+<div class="slide">
+<h1>Elegir el gráfico adecuado para cada tipo de información</h1>
+<div class="text2"><img src="graf/tiposgraf.png" alt="tipos de gráficos" width="280px" style="margin-top: -2em;" />
+<p xml:lang="en" lang="en" class="smaller"><a href="http://www.tableau.com/learn/whitepapers/which-chart-or-graph-is-right-for-you" hreflang="en">Which chart or graph is right for you?</a></p></div>
+<ol>
+<li>Gráfico de barras</li>
+<li>Gráfico de líneas</li>
+<li>Gráfico de sectores</li>
+<li>Mapa</li>
+<li>Gráfico de dispersión</li>
+<li>Diagrama de Gantt</li>
+<li>Burbujas</li>
+<li>Histograma</li>
+<li>Barras con viñetas</li>
+<li>Mapa de calor</li>
+<li>Tablas resaltadas</li>
+<li>Mapa de árbol</li>
+<li>Diagramas de caja</li>
+</ol>
+</div>
+
+<div class="slide">
+<h1>Algunas herramientas para generar la visualización de datos</h1>
+<ul class="outline">
+<li>Tableau
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-4em;"><img src="graf/tableau.png" alt="collage con varios tipos de representaciones generadas por tableau" class="scaled" /></li>
+<li>Ofrece una paleta de colores sensible con las personas con deficiencias de percepción del color</li>
+<li>Las opciones de menú son manejables por teclado</li>
+<li>Ofrece zoom para acercar detalles</li>
+<li>Gráficos "pop-up" perceptibles por los lectores de pantalla</li>
+<li>Permite exportar a HTML o CSV datos de mapas</li>
+</ul>
+</li>
+<li>Jquery Visualize
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-8em;"><img src="graf/jqueryvisualize.png" alt="vista de ejemplo de jquery visualize" class="scaled" /></li>
+<li>Libreria <abbr title="javascript">Js</abbr></li>
+<li>Utiliza el elemento Canvas de HTML5</li>
+<li>Utiliza atributos ARIA</li>
+</ul>
+</li>
+<li>Raphael
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-8em;"><img src="graf/raphael.png" alt="collage con varios tipos de representaciones generadas por raphael" class="scaled" /></li>
+<li>Libreria <abbr title="javascript">Js</abbr></li>
+<li>Usa <acronym title="Scalable vector graphics" xml:lang="en" lang="en">SVG</acronym>, <acronym title="cascading style sheets 3" xml:lang="en" lang="en">CSS3</acronym>, <acronym title="Vector Markup Language">VML</acronym></li>
+<li>Cada objeto gráfico es también un objeto del <acronym title="Document Object Model">DOM</acronym></li>
+</ul>
+</li>
+<li>D3.js
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-8em;"><img src="graf/dj3.png" alt="collage con varios tipos de representaciones generadas por DJ3" class="scaled" /></li>
+<li>Libreria <abbr title="javascript">Js</abbr></li>
+<li>Usa <acronym title="Scalable vector graphics" xml:lang="en" lang="en">SVG</acronym> y <acronym title="cascading style sheets" xml:lang="en" lang="en">CSS</acronym></li>
+<li>Recomiendo visitar la <a href="http://bost.ocks.org/mike/" xml:lang="en" lang="en" hreflang="en">página de Mike Bostock</a> (del New Youk Times)</li>
+</ul>
+</li>
+<li>Google Public Data Explorer
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-8em;"><img src="graf/googledataexplorer.png" alt="Gráfico generado por Google Data Explorer" class="scaled" /></li>
+<li>Repositorio de Datasets oficiales (27 hasta el momento) que genera automáticamente un gráfico</li>
+<li>Permite añadir tu propia dataset y generar gráficos a partir de ella</li>
+<li>Utiliza un lenguaje de metadatos propio:  <span xml:lang="en" lang="en">Dataset Publishing Language (DSPL)</span></li>
+</ul>
+</li>
+<li>Fusion Table Labbs (google)
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-8em;"><img src="graf/googlefusion.gif" alt="Animación que muestra el funcionamiento de Fusion Tables" class="scaled" /></li>
+<li>Aplicación en la nube (beta) integrada en Google Drive</li>
+<li>Permite generar gráficos a partir de las tablas creadas por el usuario</li>
+<li>Permite combinar varias tablas e incluir datos extraídos de bases de datos públicas</li>
+<li>Permite generar mapas usando google maps (Si el administrador lo habilita)</li>
+</ul>
+</li>
+<li>Polymaps (jquery – SVG)
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-8em;"><img src="graf/polymap.png" alt="Ejemplos de uso de polymaps" class="scaled" /></li>
+<li>Libreria <abbr title="javascript">Js</abbr></li>
+<li>Usa <acronym title="Scalable vector graphics" xml:lang="en" lang="en">SVG</acronym> y <acronym title="cascading style sheets" xml:lang="en" lang="en">CSS</acronym></li>
+<li>Ofrece rapidez en la presentación multi-zoom de datasets sobre mapas.</li>
+</ul>
+</li>
+<li>Many Eyes
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-8em;"><img src="graf/manyeyes.png" alt="Ejemplos de uso de Many Eyes" class="scaled" /></li>
+<li>Herramienta colaborativa para compartir y discutir sobre visualizaciones</li>
+<li>Permite generar gráficos sobre datasets existentes y sobre datos propios</li>
+<li>Permite publicar la visualización creada</li>
+<li>Han tenido en cuentas las necesidades de percepción del color pero reconoces que aún tienen mucho por hacer en cuanto a accesibilidad.</li>
+</ul>
+</li>
+<li>etc.</li>
+</ul>
+
+</div>
+
+<div class="slide">
+<h1>Recomendaciones finales</h1>
+<p>Si trabajas para una gran empresa:</p>
+<ul class="outline">
+<li>Pide al diseñador infográfico y al desarrollador que comprueben la accesibilidad
+<ul>
+<li style="float:right; width:45%; list-style-type: none; margin-top:-1em;"><img src="graf/websidar.png" alt="Vista de la web de Sidar" class="scaled" /></li>
+<li>Existen herramientas en línea para verificar la accesibilidad.</li>
+<li>Pero es necesario tener un profundo conocimiento de las pautas para poder revisar bien.</li>
+<li>Pueden unirse a la <a href="http://sidar.org">comunidad ACCESOWEB.</a></li>
+</ul>
+</li>
+</ul>
+<p>Si estás solo...</p>
+<ul class="incremental">
+<li>Únete a <strong>ACCESOWEB</strong>.</li>
+<li>Antes de usar un framework, o librería, consulta la documentación buscando el término "<span xml:lang="en" lang="en"><strong>accessiblity</strong></span>".</li>
+<li>Si no encuentras nada o no lo tienes claro, <strong>escribe a los autores</strong> solicitando que mejoren la accesibilidad 😉</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>¡La accesibilidad es un derecho, no un privilegio!</h1>
+
+<p style="float:right;"><img src="graf/bill.jpg" alt="Bill Loughborough" style="width:80%" /><br
+/>
+<em>William Loughborugh</em><br />
+In memorian</p>
+
+<p style="font-size: 230%; margin-top:5em;">Gracias por la atención prestada 😊</p>
+<div style="text-align:center;">
+<p>Emmanuelle Gutiérrez y Restrepo<br />
+<a href="mailto:coordina@sidar.org">coordina@sidar.org</a></p>
+</div>
+<p class="smaller center">Esta presentación se encuentra en: <a href="http://sidar.org/ponencias/2015/jpd15/">http://sidar.org/ponencias/2015/jpd15/</a></p>
+</div>
+
+</body>
+</html>
