@@ -6,7 +6,7 @@ Los materiales están ordenados según el [programa](http://periodismodatos.okfn
 
 ## Miércoles 3
 
-- presentacion_tola_jornadas.pdf
+- Elisabetta Tola, *Periodismo de Datos en Italia (sin FOIA y con pocos recursos)*, [PDF](https://github.com/flowsta/jpd15/blob/master/presentacion_tola_jornadas.pdf) y [PPT](https://github.com/flowsta/jpd15/blob/master/presentacion_tola_jornadas.ppt)
 - presentacion_tola_jornadas.ppt
 # Jueves 4
 - Juan Elosua, Expresiones Regulares:
