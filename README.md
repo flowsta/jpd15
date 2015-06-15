@@ -22,6 +22,7 @@ Los materiales están ordenados según el [programa](http://periodismodatos.okfn
 #### APM ####
 
 - Mar Cabra y Marcos García Rey, Swissleaks: [PDF](https://github.com/flowsta/jpd15/blob/master/SwissLeaks%20APM%2020150605.pdf) y [URL](http://bit.ly/apmfalciani)
+- [Noticia y vídeo APM](http://www.apmadrid.es/noticias/generales/periodismo-de-datos-una-herramienta-a-la-que-no-puede-renunciar-ningun-medio-no-una-opcion?Itemid=209)
 
 ### Sábado 6 ###
 
