@@ -48,6 +48,7 @@ Los materiales están ordenados según el [programa](http://periodismodatos.okfn
 
 # Referencias #
 
+- [Periodismo de datos en Asociación de la Prensa de Madrid, noticia y vídeo](http://www.apmadrid.es/noticias/generales/periodismo-de-datos-una-herramienta-a-la-que-no-puede-renunciar-ningun-medio-no-una-opcion?Itemid=209)
 - [Balance de las III Jornadas de Periodismo de Datos de Almería #JPD15](https://almeriaaldato.wordpress.com/2015/06/11/balance-de-las-iii-jornadas-de-periodismo-de-datos-de-almeria-jpd15/)
 - [Storify JPD BCN](https://storify.com/_NereaMartinez_/jornadas-de-periodismo-de-datos-2015)
 - [Storify 2º día BCN](https://storify.com/_NereaMartinez_/segundo-dia-jpd15-barcelona)
